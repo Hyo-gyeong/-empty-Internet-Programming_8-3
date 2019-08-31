@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!--3.reverse 메소드-->
+        <!--배열 원소 순서 반대로-->
+    </head>
+    <body>
+        <script>
+            var data = [1,2,3,4,5];
+            document.write("원래 데이터 : "+ data.join());
+            var redata = data.reverse();
+            document.write("<p/>뒤집은 데이터 : "+ redata.join());   
+        </script>    
+    </body>
+
+    <head>
+        <!--4.sort 메소드-->
+        <!--배열 원소정렬
+            >영어 : 대문자 → 소문자, a → z
+            >한글 : 가 → 하
+            >숫자 : 작은수 → 큰수
+             단, 자릿수가 다른경우 앞자리부터 비교해서 정렬하기때문에 오름차순으로 정렬되지 않음.-->
+    </head>
+    <body>
+        <script>
+            var num = [2,5,3,6];
+            var string = ['서울','강북구','미아동'];
+            var eng = ['computer', 'concatenate', 'array'];
+            var num2 = [12,43,52,411,9];
+            document.write("<p/>숫자 : "+num);
+            document.write("<p/>숫자 정렬 : "+num.sort());
+            document.write("<p/>한글 : "+string);
+            document.write("<p/>한글 정렬 : "+string.sort());
+            document.write("<p/>영어 : "+eng);
+            document.write("<p/>영어 정렬 : "+eng.sort());
+            document.write("<p/>자릿수 다른 수 : "+num2);
+            document.write("<p/>자릿수 다른 수 정렬 : "+num2.sort());
+        </script>    
+    </body>
+
+    <head>
+        <!--5.slice 메소드-->
+        <!--index기준으로 배열의 특정 범위에 속하는 원소만 선택하여 배열 생성-->
+    </head>
+    <body>
+        <script>
+            var num = [1,2,3,4,5,6,7,8,9,10];//0,1,2.... && -1,-2,-3...
+            document.write("<p/>배열 전체 : "+num);
+            var cut1 = num.slice(0,-5); //index 0에서 '시작'해서 -5'전'까지
+            document.write("<p/>index(0,-5) : "+cut1+"<p/>");   
+            var cut2 = num.slice(4,8); //index 4에서 '시작'해서 8'전'까지
+            document.write("index(4,8) : "+cut2+"<p/>");   
+            var cut3 = num.slice(-9,-2); //index -2에서 '시작'해서 -9'전'까지
+            document.write("index(-9,-2) : "+cut3+"<p/>");   
+        </script>    
+    </body>
+
+    <head>
+        <!--6.splice 메소드-->
+        <!--배열의 원소 추가 또는 제거-->
+    </head>
+    <body>
+        <script>
+            var data = ['하나', '둘', '셋', '넷', '다섯', '여섯', '일곱', '여덟']; 
+            document.write("원래 배열 전체 : "+ data +"<p/>");
+
+            var datadelete = data.splice(1,2); // index 1'부터' 2'개' 삭제
+            document.write("배열 일부 삭제 : "+ datadelete +"<p/>");
+            document.write("배열 전체 : "+ data +"<p/>");
+
+            var add = data.splice(1,0,'아홉', '열'); //삭제하는 원소 없이 index = 1자리에 
+            document.write("배열 아무것도 삭제안함(1,0) : "+ add +"<p/>");
+            document.write("(배열 일부 추가)배열 전체 : "+ data +"<p/>");
+
+            var add = data.splice(1,1,'열하나', '열둘'); //1번째부터 1개 즉, index = 1인 원소 자리에 원소 추가!
+            document.write("배열 일부 삭제 : "+ add +"<p/>");
+            document.write("(삭제한 자리에 원소 추가)배열 전체 : "+ data +"<p/>");
+        </script>    
+    </body>
+</html>
